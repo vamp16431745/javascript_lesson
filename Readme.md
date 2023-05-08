@@ -6,3 +6,4 @@
 使用 tsc --init 建立設定檔 修改rootDir +  outDir
 使用tsc --watch 來執行同步修改 
 #3 練習寫if else if 
+建立變數 + 指定變數
