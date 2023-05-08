@@ -1,5 +1,17 @@
 "use strict";
-let my_name = "Jonathan"; /*宣告變數my_name*/
-console.log(my_name);
-let first_name = "Lin";
-console.log(first_name);
+let today = new Date();
+let hourNow = today.getHours();
+let greeting;
+if (hourNow > 18) {
+    greeting = "Good Evening!";
+}
+else if (hourNow > 12) {
+    greeting = "Good Afternoon!";
+}
+else if (hourNow > 0) {
+    greeting = "Good Morning!";
+}
+else {
+    greeting = "Welcome!";
+}
+document.write('<h3>' + greeting + '</h3>');
