@@ -9,3 +9,5 @@ info_element=document.getElementById('info');
 info_element.innerHTML=msg;
 
 //window.alert(`現在browser位置${Window.location}`);
+favDialog_element=document.getElementById('favDialog');
+favDialog_element.showModal();
