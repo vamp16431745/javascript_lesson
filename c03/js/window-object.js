@@ -8,4 +8,4 @@ msg += `<p>螢幕高度:${window.screen.height}</p>`
 info_element=document.getElementById('info');
 info_element.innerHTML=msg;
 
-window.alert(`現在browser位置${Window.location}`);
+//window.alert(`現在browser位置${Window.location}`);
