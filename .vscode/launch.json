@@ -5,13 +5,14 @@
     "version": "0.2.0",
     "configurations": [
         
+        
     
         
         {
             "name": "debug_js2",
             "request": "launch",
             "type": "chrome",
-            "url": "http://127.0.0.1:5500/c05/inner-text-and-text-content.html",
+            "url": "http://127.0.0.1:5500/c05/inner-html.html",
             "webRoot": "${workspaceFolder}"
         },
         
@@ -22,7 +23,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\c05\\js\\inner-text-and-text-content.js"
+            "program": "${workspaceFolder}\\c05\\js\\inner-html.js"
         }
     ]
 }
