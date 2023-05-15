@@ -14,7 +14,7 @@
             "name": "debug_js2",
             "request": "launch",
             "type": "chrome",
-            "url": "http://127.0.0.1:5500/c05/get-attribute.html",
+            "url": "http://127.0.0.1:5500/c05/set-attribute.html",
             "webRoot": "${workspaceFolder}"
         },
         
