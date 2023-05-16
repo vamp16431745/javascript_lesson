@@ -1,4 +1,11 @@
 let sareaElement = document.getElementById('sarea')
+sareaElement.addEventListener('change',(event)=>{
+    let selectedIndex=sareaElement.selectedIndex;
+    console.log(sareaElement.options[selectedIndex].value)
+    //選取選單內容後 主控台複誦內容
+
+}
+)
 
 
 
@@ -18,7 +25,6 @@ function reqListener() {
     sareaElement.appendChild(optionElement)
     for(const area of sarea_array){
         let optionElement = document.createElement('option')
-    
         optionElement.textContent = area
         sareaElement.appendChild(optionElement)
     }
