@@ -1,5 +1,7 @@
 function reqListener() {
-    console.log(this.responseText);
+    let youbikedata =JSON.parse(this.responseText); 
+    //把.json檔轉成javascript物件
+    console.log(youbikedata)
 }
 
 const windowload = (event) => {
