@@ -10,7 +10,7 @@ addElement.addEventListener('click',(event)=>{
     //按下Add List Item 會增加一個新的<li>
     let liElement=document.createElement('li')
     let textnode=document.createTextNode("new Item")
-    liElement.appendChild(textnode)
+    liElement.appendChild(textnode)  //appendChild加入某個節點  才能被看見
     ulElement.appendChild(liElement)
 
 
