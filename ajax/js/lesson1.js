@@ -1,7 +1,7 @@
 let sareaElement = document.getElementById('sarea')
 sareaElement.addEventListener('change',(event)=>{
-    let selectedIndex=sareaElement.selectedIndex;
-    console.log(sareaElement.options[selectedIndex].value)
+    let selectedIndex123=sareaElement.selectedIndex;
+    console.log(sareaElement.options[selectedIndex123].value)
     //選取選單內容後 主控台複誦內容
 
 }
