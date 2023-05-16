@@ -1,8 +1,13 @@
 let sareaElement = document.getElementById('sarea')
-sareaElement.addEventListener('change',(event)=>{
-    let selectedIndex123=sareaElement.selectedIndex;
-    console.log(sareaElement.options[selectedIndex123].value)
-    //選取選單內容後 主控台複誦內容
+let sarea_array = []
+sareaElement.addEventListener('change', (event) => {
+    let selectedIndex123 = sareaElement.selectedIndex;
+    selectedValue = sareaElement.options[selectedIndex123].value
+    if(sarea_array.includes(selectedValue))
+    {
+        console.log('包含')
+        //有包含行政區的內容 才在主控台顯示'包含'('請選擇行政區'不會顯示包含)
+    } 
 
 }
 )
@@ -11,8 +16,8 @@ sareaElement.addEventListener('change',(event)=>{
 
 function reqListener() {
     //把.json檔轉成javascript物件
-    let youbikedata = JSON.parse(this.responseText);
-    let sarea_array = []
+    let youbikedata = JSON.parse(this.responseText)
+
 
     //把每一筆資料的站點用for each 抓出來
     for (const youbike of youbikedata) {
@@ -23,7 +28,7 @@ function reqListener() {
     let optionElement = document.createElement('option')
     optionElement.textContent = '請選擇行政區'
     sareaElement.appendChild(optionElement)
-    for(const area of sarea_array){
+    for (const area of sarea_array) {
         let optionElement = document.createElement('option')
         optionElement.textContent = area
         sareaElement.appendChild(optionElement)
@@ -31,7 +36,7 @@ function reqListener() {
 }
 
 const windowload = (event) => {
-    console.log('網頁已經全部被載入');    
+    console.log('網頁已經全部被載入');
     const req = new XMLHttpRequest();
     req.addEventListener("load", reqListener);
     req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
