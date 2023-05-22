@@ -31,7 +31,8 @@ sareaElement.addEventListener('change', (event) => {
                 trHTML+="<td>"+ element.tot +"</td>"
                 trHTML+="<td>"+ element.sbi +"</td>"
                 trHTML+="<td>"+ element.bemp +"</td>"
-                trHTML+="<td>"+ status +"</td>"
+                trHTML += "<td>" + element.updateTime + "</td>"
+                trHTML += "<td>" + status +"</td>"
                 trHTML+="</tr>"
             }
             
