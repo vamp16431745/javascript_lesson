@@ -4,6 +4,7 @@ let areaNameElement = document.getElementById('areaName')
 let youbikedata;// 把區域改成全域變數
 let tbodyElement = document.getElementById('tbody')
 let dialogElement = document.getElementById('dialog')
+let mapElement=document.getElementById('map')
 
 sareaElement.addEventListener('change', (event) => {
     let selectedIndex = sareaElement.selectedIndex;
@@ -41,6 +42,10 @@ sareaElement.addEventListener('change', (event) => {
         tbodyElement.innerHTML = trHTML
 
         //取得所有的a元素
+        //a元素加入click事件
+        //取出a元素的data-sno的屬性值
+        //跳出<div class="map">對話欄
+
         let aElements=document.querySelectorAll('.map')
         aElements.forEach((element)=>
         {
@@ -48,6 +53,7 @@ sareaElement.addEventListener('change', (event) => {
                 event.preventDefault()
                 let aElement=event.currentTarget
                 console.log(aElement.dataset.sno)
+                mapElement.className='overlay'
             }))
 
 
