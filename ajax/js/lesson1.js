@@ -45,6 +45,7 @@ sareaElement.addEventListener('change', (event) => {
         aElements.forEach((element)=>
         {
             element.addEventListener('click',(event=>{
+                event.preventDefault()
                 let aElement=event.currentTarget
                 console.log(aElement.dataset.sno)
             }))
