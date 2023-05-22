@@ -5,7 +5,9 @@ let youbikedata;// 把區域改成全域變數
 let tbodyElement = document.getElementById('tbody')
 let dialogElement = document.getElementById('dialog')
 let mapElement=document.getElementById('map')
+let exitElement=document.getElementById('exit')
 
+//下拉式選單被選取
 sareaElement.addEventListener('change', (event) => {
     let selectedIndex = sareaElement.selectedIndex;
     selectedValue = sareaElement.options[selectedIndex].value
@@ -62,6 +64,7 @@ sareaElement.addEventListener('change', (event) => {
     }
 });
 
+//xmlhttpRequest的listener
 function reqListener() {
 
 
@@ -82,7 +85,7 @@ function reqListener() {
     }
 }
 
-
+//監聽下載完成的http status
 function reqReadyChange() {
     if (this.readyState == 4) {
         if (this.status != 200) {
@@ -91,6 +94,7 @@ function reqReadyChange() {
     }
 }
 
+//window被載入的事件
 const windowload = (event) => {
     console.log('網頁已經全部被載入');
     const req = new XMLHttpRequest();
@@ -106,4 +110,8 @@ const windowload = (event) => {
 
 window.addEventListener('load', windowload)
 
-
+//map內的離開click事件
+exitElement.addEventListener('click',event=>
+{
+    mapElement.className='close'
+})
