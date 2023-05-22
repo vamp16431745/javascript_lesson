@@ -3,6 +3,7 @@ let sareaElement =  document.getElementById('sarea');
 let areaNameElement = document.getElementById('areaName')
 let youbikedata;// 把區域改成全域變數
 let tbodyElement=document.getElementById('tbody')
+let dialogElement=document.getElementById('dialog')
 
 sareaElement.addEventListener('change', (event) => {
     let selectedIndex = sareaElement.selectedIndex;
@@ -66,7 +67,7 @@ function reqListener() {
 function reqReadyChange(){
     if(this.readyState == 4){
         if(this.status != 200){
-            console.log("網頁維護中...")            
+           dialogElement.show()          
         }
     }
 }
@@ -76,10 +77,9 @@ const windowload = (event) => {
     const req = new XMLHttpRequest();
     req.addEventListener("load", reqListener);
     req.addEventListener("readystatechange",reqReadyChange)  //try catch  js的寫法
-     //req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
-     req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v1/youbike_immediate.json");
-     req.send();
-
+    req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
+    /*模擬錯誤的網頁*/
+    //req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v1/youbike_immediate.json");
 
     req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
     req.send();
