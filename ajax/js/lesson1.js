@@ -34,6 +34,7 @@ sareaElement.addEventListener('change', (event) => {
                 trHTML+="<td>"+ element.bemp +"</td>"
                 trHTML += "<td>" + element.updateTime + "</td>"
                 trHTML += "<td>" + status +"</td>"
+                trHTML += "<td><a href='#'>更多</a></td>"
                 trHTML+="</tr>"
             }
             
@@ -77,7 +78,7 @@ const windowload = (event) => {
     const req = new XMLHttpRequest();
     req.addEventListener("load", reqListener);
     req.addEventListener("readystatechange",reqReadyChange)  //try catch  js的寫法
-    req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
+    //eq.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json");
     /*模擬錯誤的網頁*/
     //req.open("GET", "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v1/youbike_immediate.json");
 
