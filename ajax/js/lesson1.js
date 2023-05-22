@@ -1,11 +1,11 @@
 let sarea_array = []
 let sareaElement = document.getElementById('sarea');
 let areaNameElement = document.getElementById('areaName')
-let youbikedata;// 把區域改成全域變數
 let tbodyElement = document.getElementById('tbody')
 let dialogElement = document.getElementById('dialog')
 let mapElement=document.getElementById('map')
 let exitElement=document.getElementById('exit')
+let youbikedata;// 把區域改成全域變數
 
 //下拉式選單被選取
 sareaElement.addEventListener('change', (event) => {
@@ -56,6 +56,15 @@ sareaElement.addEventListener('change', (event) => {
                 let aElement=event.currentTarget
                 console.log(aElement.dataset.sno)
                 mapElement.className='overlay'
+                //在主控台顯示站點的經緯度
+                youbikedata.forEach(site=>{
+                   if (site.sno==aElement.dataset.sno)
+                   {
+                    console.log(site.lat)
+                    console.log(site.lng)
+                   }
+
+                })
             }))
 
 
@@ -114,4 +123,5 @@ window.addEventListener('load', windowload)
 exitElement.addEventListener('click',event=>
 {
     mapElement.className='close'
+
 })
