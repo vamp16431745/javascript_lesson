@@ -26,7 +26,7 @@ sareaElement.addEventListener('change', (event) => {
                      status ="維護中"
                 }
                 trHTML+="<tr>"
-                trHTML+="<td>"+ element.sna +"</td>"
+                trHTML+="<td>"+ element.sna.slice(11) +"</td>"
                 trHTML+="<td>"+ element.ar +"</td>"
                 trHTML+="<td>"+ element.tot +"</td>"
                 trHTML+="<td>"+ element.sbi +"</td>"
