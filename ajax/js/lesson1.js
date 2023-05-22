@@ -5,8 +5,7 @@ sareaElement.addEventListener('change', (event) => {
     selectedValue = sareaElement.options[selectedIndex123].value
     if(sarea_array.includes(selectedValue))
     {
-        console.log('包含')
-        //有包含行政區的內容 才在主控台顯示'包含'('請選擇行政區'不會顯示包含)
+        console.log(`行政區:${selectedValue}`)
     } 
 
 }
@@ -27,6 +26,7 @@ function reqListener() {
     sarea_array = [...new Set(sarea_array)]
     let optionElement = document.createElement('option')
     optionElement.textContent = '請選擇行政區'
+    optionElement.setAttribute('value',area)
     sareaElement.appendChild(optionElement)
     for (const area of sarea_array) {
         let optionElement = document.createElement('option')
