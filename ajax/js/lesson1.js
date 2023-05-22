@@ -44,7 +44,10 @@ sareaElement.addEventListener('change', (event) => {
         let aElements=document.querySelectorAll('.map')
         aElements.forEach((element)=>
         {
-            console.log(element.dataset.sno)
+            element.addEventListener('click',(event=>{
+                let aElement=event.currentTarget
+                console.log(aElement.dataset.sno)
+            }))
 
 
         })
