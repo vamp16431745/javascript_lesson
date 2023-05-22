@@ -15,13 +15,23 @@ sareaElement.addEventListener('change', (event) => {
            
             
             if(element.sarea==selectedValue)
-            { trHTML+="<tr>"
+            { 
+                let status
+                if(element.act=="1")
+                {
+                     status ="營業中"
+                }
+                else
+                {
+                     status ="維護中"
+                }
+                trHTML+="<tr>"
                 trHTML+="<td>"+ element.sna +"</td>"
                 trHTML+="<td>"+ element.ar +"</td>"
                 trHTML+="<td>"+ element.tot +"</td>"
                 trHTML+="<td>"+ element.sbi +"</td>"
                 trHTML+="<td>"+ element.bemp +"</td>"
-                trHTML+="<td>"+ element.act +"</td>"
+                trHTML+="<td>"+ status +"</td>"
                 trHTML+="</tr>"
             }
             
