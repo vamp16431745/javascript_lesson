@@ -3,8 +3,8 @@ let sareaElement = document.getElementById('sarea');
 let areaNameElement = document.getElementById('areaName')
 let tbodyElement = document.getElementById('tbody')
 let dialogElement = document.getElementById('dialog')
-let mapElement=document.getElementById('map')
-let exitElement=document.getElementById('exit')
+let mapElement = document.getElementById('map')
+let exitElement = document.getElementById('exit')
 let youbikedata;// 把區域改成全域變數
 
 //下拉式選單被選取
@@ -48,28 +48,25 @@ sareaElement.addEventListener('change', (event) => {
         //取出a元素的data-sno的屬性值
         //跳出<div class="map">對話欄
 
-        let aElements=document.querySelectorAll('.map')
-        aElements.forEach((element)=>
-        {
-            element.addEventListener('click',(event=>{
+        let aElements = document.querySelectorAll('.map')
+        aElements.forEach((element) => {
+            element.addEventListener('click', (event => {
                 event.preventDefault()
-                let aElement=event.currentTarget
+                let aElement = event.currentTarget
                 console.log(aElement.dataset.sno)
-                mapElement.className='overlay'
+                mapElement.className = 'overlay'
                 //在主控台顯示站點的經緯度
-                youbikedata.forEach(site=>{
-                   if (site.sno==aElement.dataset.sno)
-                   {
-                    console.log(site.lat)
-                    console.log(site.lng)
-                   }
+                youbikedata.forEach(site => {
+                    if (site.sno == aElement.dataset.sno) {
+                        open('https://www.google.com/maps/place/'+ site.lat +','+site.lng)
+                    }
 
                 })
             }))
 
 
         })
-        
+
     }
 });
 
@@ -120,8 +117,7 @@ const windowload = (event) => {
 window.addEventListener('load', windowload)
 
 //map內的離開click事件
-exitElement.addEventListener('click',event=>
-{
-    mapElement.className='close'
+exitElement.addEventListener('click', event => {
+    mapElement.className = 'close'
 
 })
