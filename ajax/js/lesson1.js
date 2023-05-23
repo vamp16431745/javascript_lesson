@@ -5,6 +5,7 @@ let tbodyElement = document.getElementById('tbody')
 let dialogElement = document.getElementById('dialog')
 let mapElement = document.getElementById('map')
 let exitElement = document.getElementById('exit')
+let inlineMapElement = document.querySelector('#inlineMap')
 let youbikedata;// 把區域改成全域變數
 
 //下拉式選單被選取
@@ -57,9 +58,10 @@ sareaElement.addEventListener('change', (event) => {
                 mapElement.className = 'overlay'
                 //在主控台顯示站點的經緯度
                 youbikedata.forEach(site => {
-                    if (site.sno == aElement.dataset.sno) {
-                        open('https://www.google.com/maps/place/'+ site.lat +','+site.lng)
-                    }
+                    //open('https://www.google.com/maps/place/'+ site.lat +','+site.lng)
+                        //var url = 'https://www.google.com/maps/place/'+ site.lat +','+site.lng + "&output=embed";
+                        inlineMapElement.src = "https://www.openstreetmap.org/export/embed.html?bbox=-0.004017949104309083%2C51.47612752641776%2C0.00030577182769775396%2C51.478569861898606&layer=mapnik"
+                        //window.location.replace(url);
 
                 })
             }))
