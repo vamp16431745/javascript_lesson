@@ -1,16 +1,17 @@
-#container{
-    display:grid;
-    grid-template-columns: 200px 1fr;   /*fr把剩餘空間依比例分配*/
-    grid-template-rows: 8em 500px 8em;
-    grid-template-areas: 
-    "header header"
-    "nav main"
-    "footer footer"
-    ;  
+#container {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    /*fr把剩餘空間依比例分配*/
+    grid-template-rows: 8em auto 8em;
+    grid-template-areas:
+        "header header"
+        "nav main"
+        "footer footer"
+    ;
 }
 
 
-.header{
+.header {
     background-color: crimson;
     grid-row-start: 1;
     grid-row-end: 2;
@@ -22,37 +23,65 @@
 
 
     display: flex;
-    flex-direction: row; /*水平(由左至右開始)*/
-    flex-wrap: nowrap; /*不換行*/
-    justify-content: center;  /*左右置中*/
-    align-items: center;    /*上下置中*/
+    flex-direction: row;
+    /*水平(由左至右開始)*/
+    flex-wrap: nowrap;
+    /*不換行*/
+    justify-content: center;
+    /*左右置中*/
+    align-items: center;
+    /*上下置中*/
 
 }
 
-.nav{
+.nav {
     background-color: orange;
-    grid-row:2/3;
+    grid-row: 2/3;
     grid-column: 1/span 1;
 
-    
+
 }
 
-.main{
+.nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.nav a {
+    display: block;
+    padding: 1em;
+    text-decoration: none;
+    text-align: center;
+
+    color: black;
+    font-weight: bold;
+
+}
+
+
+.main {
     background-color: yellow;
     grid-row: 2/3;
     grid-column: 2/3;
 }
 
-.footer{
+.footer {
     background-color: greenyellow;
     grid-row: 3/4;
-    grid-column: 1/span 2; /*從第1條線開始 / 橫跨2格*/
+    grid-column: 1/span 2;
+    /*從第1條線開始 / 橫跨2格*/
     grid-area: footer;
 
     display: flex;
-    flex-direction: row; /*水平(由左至右開始)*/
-    flex-wrap: nowrap; /*不換行*/
-    justify-content: center;  /*左右置中*/
-    align-items: center;    /*上下置中*/
+    flex-direction: row;
+    /*水平(由左至右開始)*/
+    flex-wrap: nowrap;
+    /*不換行*/
+    justify-content: center;
+    /*左右置中*/
+    align-items: center;
+    /*上下置中*/
 
 }
