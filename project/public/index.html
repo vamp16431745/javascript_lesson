@@ -4,76 +4,45 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>project</title>
+  <title>產品</title>
   <link rel="stylesheet" href="css/bootstrap.min.css">
   <link rel="stylesheet" href="css/index.css">
-   <script src="js/index.js" type="module"></script> 
+  <script src="js/index.js" type="module"></script>
 </head>
 <body>
-<div id="container">
-  <header class="header">
-   <h1>產品輸入</h1>
-  </header>
-  <nav class="nav">
-    <ul>
-      <li><a href="#">產品輸入</a></li>
-      <li><a href="#">產品更新</a></li>
-      <li><a href="#">產品導覽</a></li>
-    </ul>
-
-  </nav>
-  <main class="main">
-    <form class="row g-3">
-      <div class="col-md-6">
-        <label for="inputEmail4" class="form-label">Email</label>
-        <input type="email" class="form-control" id="inputEmail4">
-      </div>
-      <div class="col-md-6">
-        <label for="inputPassword4" class="form-label">Password</label>
-        <input type="password" class="form-control" id="inputPassword4">
-      </div>
-      <div class="col-12">
-        <label for="inputAddress" class="form-label">Address</label>
-        <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
-      </div>
-      <div class="col-12">
-        <label for="inputAddress2" class="form-label">Address 2</label>
-        <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
-      </div>
-      <div class="col-md-6">
-        <label for="inputCity" class="form-label">City</label>
-        <input type="text" class="form-control" id="inputCity">
-      </div>
-      <div class="col-md-4">
-        <label for="inputState" class="form-label">State</label>
-        <select id="inputState" class="form-select">
-          <option selected>Choose...</option>
-          <option>...</option>
-        </select>
-      </div>
-      <div class="col-md-2">
-        <label for="inputZip" class="form-label">Zip</label>
-        <input type="text" class="form-control" id="inputZip">
-      </div>
-      <div class="col-12">
-        <div class="form-check">
-          <input class="form-check-input" type="checkbox" id="gridCheck">
-          <label class="form-check-label" for="gridCheck">
-            Check me out
-          </label>
+  <div id="container">
+    <header class="header">
+      <h1>產品輸入</h1>
+    </header>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">產品輸入</a></li>
+        <li><a href="#">產品更新</a></li>
+        <li><a href="#">產品導覽</a></li>
+      </ul>
+    </nav>
+    <main class="main">
+      <form>
+        <div class="mb-3">
+          <label for="inputName" class="form-label">產品名稱</label>
+          <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
+          <div id="nameHelp" class="form-text">產品名稱要祥細</div>
         </div>
-      </div>
-      <div class="col-12">
-        <button type="submit" class="btn btn-primary">Sign in</button>
-      </div>
-    </form>
-
-  </main>
-  <footer class="footer">
-    <h1>Footer</h1>
-  </footer>
-</div>
-
- 
+        <div class="mb-3">
+          <label for="InputCode1" class="form-label">產品編號</label>
+          <input type="text" class="form-control" id="InputCode1" aria-describedby="codeHelp">
+          <div id="codeHelp" class="form-text">xxx-xxx-xxx</div>
+        </div>
+        <div class="mb-3 form-check">
+          <input type="checkbox" class="form-check-input" id="exampleCheck1">
+          <label class="form-check-label" for="exampleCheck1">Check me out</label>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </main>
+    <footer class="footer">
+      <h1>Footer</h1>
+    </footer>
+  </div>  
 </body>
 </html>
