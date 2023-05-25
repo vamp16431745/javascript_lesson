@@ -56,14 +56,9 @@
     grid-area:footer;
 }
 
-form .nameAlert{
+form .alert{
+    color:red;
     font-size: 0.8em;
-    color: red;
-}
-
-form .formAlert{
-    font-size: 0.8em;
-    color: red;
 }
 
 form .close{

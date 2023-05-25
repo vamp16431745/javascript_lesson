@@ -22,18 +22,18 @@
       </ul>
     </nav>
     <main class="main">
-      <form>
+      <form id="form" method="post" action="">
         <div class="mb-3">
           <label for="inputName" class="form-label">產品名稱</label>
           <input type="text" class="form-control" id="inputName" aria-describedby="nameHelp">
           <div id="nameHelp" class="form-text">產品名稱要祥細</div>
-          <p class="nameAlert close">*產品名稱一定要填寫</p>
+          <p id='nameAlert' class="alert close">*產品名稱一定要填寫</p>
         </div>
         <div class="mb-3">
           <label for="InputCode1" class="form-label">產品編號</label>
           <input type="text" class="form-control" id="InputCode1" aria-describedby="codeHelp">
           <div id="codeHelp" class="form-text">xxx-xxx-xxx</div>
-          <p class="formAlert close">*格式不符合</p>
+          <p class="alert close">*格式不符合</p>
         </div>
         
         <p>類別</p>
@@ -62,6 +62,8 @@
           <label class="form-check-label" for="warrantyDate">保存期限</label>
           <input type="date" class="form-check-input" id="warrantyDate">          
         </div>
+
+        <button type="submit" class="btn btn-primary">送出</button>
         
       </form>
     </main>
