@@ -46,4 +46,11 @@
     grid-row: 3/4;
     grid-column: 1/span 2; /*從第1條線開始 / 橫跨2格*/
     grid-area: footer;
+
+    display: flex;
+    flex-direction: row; /*水平(由左至右開始)*/
+    flex-wrap: nowrap; /*不換行*/
+    justify-content: center;  /*左右置中*/
+    align-items: center;    /*上下置中*/
+
 }
