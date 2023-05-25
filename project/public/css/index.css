@@ -1,7 +1,12 @@
 #container{
     display:grid;
     grid-template-columns: 200px 1fr;   /*fr把剩餘空間依比例分配*/
-    grid-template-rows: 8em 500px 8em;  
+    grid-template-rows: 8em 500px 8em;
+    grid-template-areas: 
+    "header header"
+    "nav main"
+    "footer footer"
+    ;  
 }
 
 
@@ -33,4 +38,5 @@
     background-color: greenyellow;
     grid-row: 3/4;
     grid-column: 1/span 2; /*從第1條線開始 / 橫跨2格*/
+    grid-area: footer;
 }
