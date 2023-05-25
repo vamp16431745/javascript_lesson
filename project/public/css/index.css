@@ -1,9 +1,20 @@
-.header{
-    background-color: crimson;
+#container{
+    display:grid;
+    grid-template-columns: 200px 500px;
+    grid-template-rows: 100px 500px 100px;
 }
 
-.nav
-{
+
+.header{
+    background-color: crimson;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    grid-column-start: 1;
+    grid-column-end: 3;
+
+}
+
+.nav{
     background-color: orange;
 }
 
