@@ -1,7 +1,7 @@
 #container{
     display:grid;
     grid-template-columns: 200px 1fr;   /*fr把剩餘空間依比例分配*/
-    grid-template-rows: 100px 500px 100px;
+    grid-template-rows: auto 500px auto;  /*auto跟字的大小一樣*/
 }
 
 
