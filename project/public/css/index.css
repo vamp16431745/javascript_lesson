@@ -61,6 +61,11 @@ form .nameAlert{
     color: red;
 }
 
+form .formAlert{
+    font-size: 0.8em;
+    color: red;
+}
+
 form .close{
     display: none;
 }
