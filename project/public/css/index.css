@@ -56,6 +56,15 @@
     grid-area:footer;
 }
 
+form .nameAlert{
+    font-size: 0.8em;
+    color: red;
+}
+
+form .close{
+    display: none;
+}
+
 /*手機橫的*/
 @media (min-width: 576px) {  }
 
