@@ -1,3 +1,24 @@
+import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js'
+
+import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js'
+
+
+
+
+
+
+const firebaseConfig = {
+    apiKey: "AIzaSyCGZje3uuD-fjgKXGK1gIkiAWJAU1a9x5g",
+    authDomain: "project-javascript-6b53d.firebaseapp.com",
+    projectId: "project-javascript-6b53d",
+    storageBucket: "project-javascript-6b53d.appspot.com",
+    messagingSenderId: "1042869709719",
+    appId: "1:1042869709719:web:7f407b032a60861dcfb2d2"
+  };
+
+
+  const app = initializeApp(firebaseConfig);
+
 
 let formElement = document.querySelector('#form')
 
@@ -81,6 +102,7 @@ const getwarrantyDate = () => {
     allOfDataArray.push({ 'warrantyDate': dateElement.value })
 
 }
+
 
 const clearAllAlertAndData = () => {
     //清除產品警告

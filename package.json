@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "firebase": "^9.22.0",
+    "firebase": "^9.22.1",
     "prompt-sync": "^4.2.0"
   }
 }
