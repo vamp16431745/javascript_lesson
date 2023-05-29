@@ -4,20 +4,20 @@ let formElement = document.querySelector('#form')
 let allOfDataArray = [];
 
 //setup現在的日期
-const setupCurrentDate=() =>{
+const setupCurrentDate = () => {
 
-let current =new Date()
-let year= current.getFullYear()
-let month=current.getMonth()+1
-let date=current.getDate()
+    let current = new Date()
+    let year = current.getFullYear()
+    let month = current.getMonth() + 1
+    let date = current.getDate()
 
-let month_string=String(month).padStart(2,"0")
-let date_string=String(date).padStart(2,"0")
-let current_date_string=`${year}-${month_string}-${date_string}`
+    let month_string = String(month).padStart(2, "0")
+    let date_string = String(date).padStart(2, "0")
+    let current_date_string = `${year}-${month_string}-${date_string}`
 
-let dateElement=document.querySelector('#warrantyDate')
-dateElement.value=current_date_string
-dateElement.min=current_date_string
+    let dateElement = document.querySelector('#warrantyDate')
+    dateElement.value = current_date_string
+    dateElement.min = current_date_string
 
 
 }
@@ -42,7 +42,7 @@ const validateCodeFormat = () => {
     let inputCodeElement = document.querySelector('#inputCode')
     let codeAlertElement = document.querySelector('#codeAlert')
     let inputCodeValue = inputCodeElement.value
-    const codePatternReg = /\w\w\w-\w\w\w-\w\w\w/g  
+    const codePatternReg = /\w\w\w-\w\w\w-\w\w\w/g
     //正規則表達式Regular expression 能驗證xxx-xxx-xxx的語法
     console.log(inputCodeValue)
     if (inputCodeValue.length == 0 || codePatternReg.test(inputCodeValue) == false
@@ -54,37 +54,34 @@ const validateCodeFormat = () => {
     allOfDataArray.push({ 'code': inputCodeValue })
 }
 
-const checkRadioValue =() =>{
-    let radioElements =document.querySelectorAll('.form-check-input')
-    radioElements.forEach(element =>{
-        if(element.checked)
-        {
+const checkRadioValue = () => {
+    let radioElements = document.querySelectorAll('.form-check-input')
+    radioElements.forEach(element => {
+        if (element.checked) {
             // console.log(element.value)
-            allOfDataArray.push({'catagory':element.value})
+            allOfDataArray.push({ 'catagory': element.value })
         }
     })
 }
 
-const warrantyCheck =() =>{
-    let checkboxElement =document.querySelector('#warrantyCheck1')
-    if(checkboxElement.checked)
-    {
-        allOfDataArray.push({'warranty':true})
+const warrantyCheck = () => {
+    let checkboxElement = document.querySelector('#warrantyCheck1')
+    if (checkboxElement.checked) {
+        allOfDataArray.push({ 'warranty': true })
 
     }
-    else
-    {
-        allOfDataArray.push({'warranty':false})
+    else {
+        allOfDataArray.push({ 'warranty': false })
 
     }
 }
 
-const getwarrantyDate =() =>{
-    let dateElement=document.querySelector('#warrantyDate')
-    allOfDataArray.push({'warrantyDate':dateElement.value})
+const getwarrantyDate = () => {
+    let dateElement = document.querySelector('#warrantyDate')
+    allOfDataArray.push({ 'warrantyDate': dateElement.value })
 
 }
- 
+
 const clearAllAlertAndData = () => {
     //清除產品警告
     let nameAlertElement = document.querySelector('#nameAlert')
@@ -98,6 +95,21 @@ const clearAllAlertAndData = () => {
     allOfDataArray = []
 }
 
+const setEmpty = () => {
+    let inputNameElement = document.querySelector('#inputName')
+    inputNameElement.value = ""
+    let inputCodeElement = document.querySelector('#inputCode')
+    inputCodeElement.value = ""
+    let radioElements = document.querySelector('#inlineRadio1')
+    radioElements.checked = true
+    let checkboxElement = document.querySelector('#warrantyCheck1')
+    checkboxElement.checked = false
+    setupCurrentDate()
+
+
+
+}
+
 formElement.addEventListener('submit', (event) => {
     clearAllAlertAndData()
     event.preventDefault()
@@ -107,4 +119,5 @@ formElement.addEventListener('submit', (event) => {
     warrantyCheck()
     getwarrantyDate()
     console.log(allOfDataArray)
+    setEmpty()
 })
