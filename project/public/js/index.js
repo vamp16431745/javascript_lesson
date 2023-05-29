@@ -36,7 +36,8 @@ const checkRadioValue =() =>{
     radioElements.forEach(element =>{
         if(element.checked)
         {
-            console.log(element.value)
+            // console.log(element.value)
+            allOfDataArray.push({'catagory':element.value})
         }
     })
 }
