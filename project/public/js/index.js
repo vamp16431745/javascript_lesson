@@ -17,6 +17,9 @@ let current_date_string=`${year}-${month_string}-${date_string}`
 
 let dateElement=document.querySelector('#warrantyDate')
 dateElement.value=current_date_string
+dateElement.min=current_date_string
+
+
 }
 
 setupCurrentDate()
