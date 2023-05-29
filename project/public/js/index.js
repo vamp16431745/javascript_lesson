@@ -18,11 +18,12 @@ const firebaseConfig = {
 
 
   const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
 
 
 let formElement = document.querySelector('#form')
 
-let allOfDataArray = [];
+let allOfDataObject ={};
 
 //setup現在的日期
 const setupCurrentDate = () => {
@@ -56,7 +57,8 @@ const validateName = () => {
         nameAlertElement.classList.remove("close")
         return
     }
-    allOfDataArray.push({ 'productName': productName })
+    // allOfDataArray.push({ 'productName': productName })
+    allOfDataObject['productName']=productName
 }
 
 const validateCodeFormat = () => {
@@ -72,7 +74,8 @@ const validateCodeFormat = () => {
         codeAlertElement.classList.remove("close")
         return
     }
-    allOfDataArray.push({ 'code': inputCodeValue })
+    // allOfDataArray.push({ 'code': inputCodeValue })
+    allOfDataObject['code']=inputCodeValue
 }
 
 const checkRadioValue = () => {
@@ -80,7 +83,8 @@ const checkRadioValue = () => {
     radioElements.forEach(element => {
         if (element.checked) {
             // console.log(element.value)
-            allOfDataArray.push({ 'catagory': element.value })
+            // allOfDataArray.push({ 'catagory': element.value })
+            allOfDataObject['catagory']=element.value
         }
     })
 }
@@ -88,18 +92,21 @@ const checkRadioValue = () => {
 const warrantyCheck = () => {
     let checkboxElement = document.querySelector('#warrantyCheck1')
     if (checkboxElement.checked) {
-        allOfDataArray.push({ 'warranty': true })
+        // allOfDataArray.push({ 'warranty': true })
+        allOfDataObject['warranty']=true
 
     }
     else {
-        allOfDataArray.push({ 'warranty': false })
+        // allOfDataArray.push({ 'warranty': false })
+        allOfDataObject['warranty']=false
 
     }
 }
 
 const getwarrantyDate = () => {
     let dateElement = document.querySelector('#warrantyDate')
-    allOfDataArray.push({ 'warrantyDate': dateElement.value })
+    // allOfDataArray.push({ 'warrantyDate': dateElement.value })
+    allOfDataObject['warrantyDate']=dateElement.value
 
 }
 
@@ -114,7 +121,7 @@ const clearAllAlertAndData = () => {
     codeAlertElement.classList.add("close")
 
     //清除收集的資料
-    allOfDataArray = []
+    allOfDataObject = {}
 }
 
 const setEmpty = () => {
@@ -140,6 +147,6 @@ formElement.addEventListener('submit', (event) => {
     checkRadioValue()
     warrantyCheck()
     getwarrantyDate()
-    console.log(allOfDataArray)
+    console.log(allOfDataObject)
     setEmpty()
 })
