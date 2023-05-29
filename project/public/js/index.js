@@ -1,6 +1,9 @@
 import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-app.js'
 
-import { getFirestore } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js'
+import { getFirestore, addDoc, collection } from 'https://www.gstatic.com/firebasejs/9.22.1/firebase-firestore.js'
+
+
+
 
 
 
@@ -14,16 +17,16 @@ const firebaseConfig = {
     storageBucket: "project-javascript-6b53d.appspot.com",
     messagingSenderId: "1042869709719",
     appId: "1:1042869709719:web:7f407b032a60861dcfb2d2"
-  };
+};
 
 
-  const app = initializeApp(firebaseConfig);
-  const db = getFirestore(app);
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 
 let formElement = document.querySelector('#form')
 
-let allOfDataObject ={};
+let allOfDataObject = {};
 
 //setup現在的日期
 const setupCurrentDate = () => {
@@ -58,7 +61,7 @@ const validateName = () => {
         return
     }
     // allOfDataArray.push({ 'productName': productName })
-    allOfDataObject['productName']=productName
+    allOfDataObject['productName'] = productName
 }
 
 const validateCodeFormat = () => {
@@ -75,7 +78,7 @@ const validateCodeFormat = () => {
         return
     }
     // allOfDataArray.push({ 'code': inputCodeValue })
-    allOfDataObject['code']=inputCodeValue
+    allOfDataObject['code'] = inputCodeValue
 }
 
 const checkRadioValue = () => {
@@ -84,7 +87,7 @@ const checkRadioValue = () => {
         if (element.checked) {
             // console.log(element.value)
             // allOfDataArray.push({ 'catagory': element.value })
-            allOfDataObject['catagory']=element.value
+            allOfDataObject['catagory'] = element.value
         }
     })
 }
@@ -93,12 +96,12 @@ const warrantyCheck = () => {
     let checkboxElement = document.querySelector('#warrantyCheck1')
     if (checkboxElement.checked) {
         // allOfDataArray.push({ 'warranty': true })
-        allOfDataObject['warranty']=true
+        allOfDataObject['warranty'] = true
 
     }
     else {
         // allOfDataArray.push({ 'warranty': false })
-        allOfDataObject['warranty']=false
+        allOfDataObject['warranty'] = false
 
     }
 }
@@ -106,7 +109,7 @@ const warrantyCheck = () => {
 const getwarrantyDate = () => {
     let dateElement = document.querySelector('#warrantyDate')
     // allOfDataArray.push({ 'warrantyDate': dateElement.value })
-    allOfDataObject['warrantyDate']=dateElement.value
+    allOfDataObject['warrantyDate'] = dateElement.value
 
 }
 
@@ -139,7 +142,7 @@ const setEmpty = () => {
 
 }
 
-formElement.addEventListener('submit', (event) => {
+formElement.addEventListener('submit', async (event) => {
     clearAllAlertAndData()
     event.preventDefault()
     validateName()
@@ -148,5 +151,16 @@ formElement.addEventListener('submit', (event) => {
     warrantyCheck()
     getwarrantyDate()
     console.log(allOfDataObject)
+    try {
+        const docRef = await addDoc(collection(db, "products"), 
+            allOfDataObject);
+        
+
+        console.log("這個文件的ID是 ", docRef.id);
+
+    } catch (e) {
+        console.error("Error adding document: ", e);
+
+    }
     setEmpty()
 })
