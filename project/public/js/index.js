@@ -31,6 +31,11 @@ const validateCodeFormat = () => {
     allOfDataArray.push({ 'code': inputCodeValue })
 }
 
+const checkRadioValue =() =>{
+    let radioElements =document.querySelectorAll('.form-check-label')
+    console.log(radioElements)
+}
+ 
 const clearAllAlertAndData = () => {
     //清除產品警告
     let nameAlertElement = document.querySelector('#nameAlert')
@@ -49,5 +54,6 @@ formElement.addEventListener('submit', (event) => {
     event.preventDefault()
     validateName()
     validateCodeFormat()
+    checkRadioValue()
     console.log(allOfDataArray)
 })
