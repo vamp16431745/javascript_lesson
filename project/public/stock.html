@@ -8,7 +8,26 @@
     <title>產品</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/index.css">
-    <script  type="module"></script>
+    <script type="module">
+        let selectedElement = document.querySelector('#stockSelect')
+        fetch(new Request('codeSearch.json'))
+        .then((response) => {
+                return response.json()
+        }).then((r) => {
+                r.forEach(element => {
+                    let name = element.name
+                    let code = element.code
+                    let stockName = `${code}-${name}`
+                    let optionElement = document.createElement("option")
+                    optionElement.value = code
+                    optionElement.innerText = stockName
+                    selectedElement.appendChild(optionElement)
+                });
+        })
+        
+        
+
+    </script>
 </head>
 
 <body>
@@ -23,30 +42,11 @@
                 <li><a href="view.html">產品導覽</a></li>
             </ul>
         </nav>
-        <main class="main"><select class="form-select" aria-label="Default select example">
-            <option selected>Open this select menu</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-
-
-
-            <script>
-            // 抓取json資料
-            let promiseObject = fetch(new Request('codeSearch.json'))
-    
-        //    then回傳json
-            promiseObject.then((response)=>{
-                return response.json()
-    
-    // 在主控台顯示
-            }).then((r)=>{
-    
-                console.log(r)
-            })
-    </script>
-
+        <main class="main">
+            <select id="stockSelect" class="form-select" aria-label="Default select example">
+                <option selected>請選股票名稱</option>
+                
+            </select>
         </main>
         <footer class="footer">
             <h1>Footer</h1>
