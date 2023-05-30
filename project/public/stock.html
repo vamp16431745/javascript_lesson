@@ -23,7 +23,15 @@
                 <li><a href="view.html">產品導覽</a></li>
             </ul>
         </nav>
-        <main class="main">
+        <main class="main"><select class="form-select" aria-label="Default select example">
+            <option selected>Open this select menu</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+
+
+
             <script>
             // 抓取json資料
             let promiseObject = fetch(new Request('codeSearch.json'))
