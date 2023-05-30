@@ -10,11 +10,18 @@
 
 <body>
     <script>
+        
         let req = new XMLHttpRequest()
 
         req.addEventListener("load", function (event) {
-            console.log(typeof this.responseText)
-            console.log(this.responseText)
+            //console.log(typeof this.responseText)
+            //console.log(this.responseText)
+            let responseJSON = JSON.parse(this.responseText)
+            console.log(typeof responseJSON)
+            //console.log(responseJSON)
+            for (let item of responseJSON){
+                console.log(item.name)
+            }
         })
 
         req.addEventListener("error", function (event) {
@@ -24,6 +31,8 @@
         req.open('GET', 'codeSearch.json')
         req.send()
 
+    </script>
+        
     </script>
 </body>
 
