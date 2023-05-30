@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    
+<!-- module=等到網頁全部被載入時 才執行script程式碼 -->
+<script type="module">
+        // 抓取json資料
+        let promiseObject = fetch(new Request('codeSearch.json'))
+
+    //    then回傳json
+        promiseObject.then((response)=>{
+            return response.json()
+
+// 在主控台顯示
+        }).then((r)=>{
+
+            console.log(r)
+        })
+
+    </script>
+
+</body>
+
+</html>
